@@ -1,0 +1,28 @@
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+
+sudo usermod -aG docker pi
+dudo docker run hello-world
+
+sudo apt-get install -y libffi-dev libssl-dev
+sudo apt-get install -y python3 python3-pip
+sudo apt-get remove pytho-configparser
+
+sudo pip3 -v install docker-compose
+
+   curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
+   sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+   sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+
+
+   sudo apt-get update -y
+   sudo apt-get install libssl1.0.2 moby-engine moby-cli iotedge -y
+
+
+   sudo nano /etc/iotedge/config.yaml
+
+  sudo systemctl restart iotedge
+  sudo systemctl status iotedge
+  sudo iotedge check 
+  sudo iotedge list 
